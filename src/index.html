@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Katres</title>
+</head>
+
+<body class="body">
+  <div class="body__wrapper">
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="logo">
+          <div class="logo__wrapper">
+            <img src="images/katres_logo.png" alt="Логотип Katres">
+          </div>
+        </div>
+
+        <address class="contacts">
+          <div class="contacts__wrapper">
+            <a class="contacts__email"
+              href="mailto:blog@htmlacademy.ru&cc=mail@htmlacademy.ru?body=Привет, подпишитесь на рассылку">
+              <span class="contacts__title visually-hidden">info@katres.ru</span>
+              <svg class="contacts_image-email">
+                <use xlink:href="images/sprite.svg#email" />
+              </svg>
+            </a>
+            <a class="contacts__email" href="tel:+79001111111">
+              <span class="contacts__tel visually-hidden">8 800 685 69 44</span>
+              <svg class="contacts_image-tel">
+                <use xlink:href="images/sprite.svg#phone" />
+              </svg>
+            </a>
+          </div>
+        </address>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav_item">
+              <p></p>Продукция
+            </li>
+            <li class="nav_item">Реализованные проекты</li>
+            <li class="nav_item">О заводе</li>
+            <li class="nav_item">Новости</li>
+            <li class="nav_item">Сервис </li>
+            <li class="nav_item">Лизинг</li>
+            <li class="nav_item">Контакты</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </main>
+    <footer></footer>
+  </div>
+</body>
+<script src="js/app.min.js"></script>
+
+</html>

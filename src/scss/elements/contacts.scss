@@ -1,0 +1,21 @@
+.contacts__wrapper {
+    display: flex;
+}
+
+.contacts__email {
+    // position: relative;
+    height: 39px;
+    width: 39px;
+    background-color: #FFDA00;
+    border-radius: 50%;
+}
+
+.contacts_image-tel,
+.contacts_image-email {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 18px;
+    width: 16px;
+}
