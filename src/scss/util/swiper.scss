@@ -1,6 +1,54 @@
 @import '../../../node_modules/swiper/swiper-bundle';
 
 .swiper {
-    width: 600px;
-    height: 300px;
-  }
+
+    height: 582px;
+}
+
+.swiper-wrapper {
+  width: 100%;
+}
+
+
+.swiper__image {
+  height: 100%;
+  object-fit:cover;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  bottom: 40px;
+ 
+}
+
+.swiper-pagination-bullet {
+  border-radius: 20px;
+  --swiper-theme-color: #FFDA00;
+  --swiper-pagination-bullet-size: 5px;
+  --swiper-pagination-bullet-width: 35px;
+}
+
+.swiper-slide__text {
+  color: #ffffff;
+}
+
+.swiper-slide--standart {
+  background-image: url('../images/images1.jpg');
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.swiper-slide__title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.swiper-slider__text-content {
+  position: absolute;
+  left: 10px;
+  bottom: 75px;
+}

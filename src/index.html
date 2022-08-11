@@ -13,10 +13,8 @@
   <div class="body__wrapper">
     <header class="header">
       <div class="header__wrapper">
-        <div class="logo">
-          <div class="logo__wrapper">
-            <img src="images/katres_logo.png" alt="Логотип Katres">
-          </div>
+        <div class="header__logo">
+          <img src="images/katres-logo.svg" alt="Логотип Katres">
         </div>
 
         <address class="contacts">
@@ -24,13 +22,13 @@
             <a class="contacts__email"
               href="mailto:blog@htmlacademy.ru&cc=mail@htmlacademy.ru?body=Привет, подпишитесь на рассылку">
               <span class="contacts__title visually-hidden">info@katres.ru</span>
-              <svg class="contacts_image-email">
+              <svg class="contacts__image-email">
                 <use xlink:href="images/sprite.svg#email" />
               </svg>
             </a>
             <a class="contacts__email" href="tel:+79001111111">
               <span class="contacts__tel visually-hidden">8 800 685 69 44</span>
-              <svg class="contacts_image-tel">
+              <svg class="contacts__image-tel">
                 <use xlink:href="images/sprite.svg#phone" />
               </svg>
             </a>
@@ -38,32 +36,119 @@
         </address>
 
         <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav_item">
-              <p></p>Продукция
-            </li>
-            <li class="nav_item">Реализованные проекты</li>
-            <li class="nav_item">О заводе</li>
-            <li class="nav_item">Новости</li>
-            <li class="nav_item">Сервис </li>
-            <li class="nav_item">Лизинг</li>
-            <li class="nav_item">Контакты</li>
-          </ul>
+          <div class="nav__wrapper">
+            <div class="nav__hamburger ">
+              <div class="nav__hamburger-E"></div>
+              <div class="nav__hamburger-X"></div>
+            </div>
+            <ul class="nav__list visually-hidden">
+              <li class="nav__item">
+                <span class="nav__item-title">Продукция</span>
+                <ul class="nav__menu-list visually-hidden">
+                  <li class="nav__menu-item">Стандартные сушки</li>
+                  <li class="nav__menu-item">Ленточные сушки</li>
+                  <li class="nav__menu-item">Nordic Line</li>
+                  <li class="nav__menu-item">Высокотемпературные сушки</li>
+                  <li class="nav__menu-item">Туннельные сушки</li>
+                </ul>
+              </li>
+              <li class="nav__item">Реализованные проекты</li>
+              <li class="nav__item">О заводе</li>
+              <li class="nav__item">Новости</li>
+              <li class="nav__item">Сервис </li>
+              <li class="nav__item">Лизинг</li>
+              <li class="nav__item">Контакты</li>
+            </ul>
+          </div>
         </nav>
       </div>
     </header>
 
     <main class="main">
+      <h1 class="main__title visually-hidden">Cушильные камеры</h1>
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide swiper-slide--standart">
+            <div class="swiper-slider__text-content">
+              <h2 class="swiper-slide__title">Самые лучшие сушильные камеры</h2>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--standart">
+            <div class="swiper-slider__text-content">
+              <h2 class="swiper-slide__title">Самые лучшие сушильные камеры</h2>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--standart">
+            <div class="swiper-slider__text-content">
+              <h2 class="swiper-slide__title">Самые лучшие сушильные камеры</h2>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--standart">
+            <div class="swiper-slider__text-content">
+              <h2 class="swiper-slide__title">Самые лучшие сушильные камеры</h2>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+            </div>
+          </div>
+          <div class="swiper-slide swiper-slide--standart">
+            <div class="swiper-slider__text-content">
+              <h2 class="swiper-slide__title">Самые лучшие сушильные камеры</h2>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+              <p class="swiper-slide__text">Самые лучшие сушильные камеры</p>
+            </div>
+          </div>
         </div>
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev visually-hidden"></div>
+        <div class="swiper-button-next  visually-hidden"></div>
       </div>
+      <section class="products">
+        <div class="products__wrapper">
+          <h2 class="products__title">Продукция</h2>
+          <ul class="products__list">
+            <li class="products__item">
+              <img class="products__item-img" src="images/drying-standart.jpg" alt="Стандартные сушки">
+              <div class="products__item-container"> <span class="products__item-first-world">Стандартные</span>
+                сушки</div>
+
+            </li>
+            <li class="products__item">
+              <div class="products__item-container"><span class="products__item-first-world">Ленточные</span>
+                сушки</div>
+              <img class="products__item-img" src="images/drying-tapple.jpg" alt="Ленточные сушки">
+            </li>
+            <li class="products__item">
+              <div class="products__item-container"><span class="products__item-first-world">Nordic</span>
+                Line</div>
+              <img class="products__item-img" src="images/drying-nordic.jpg" alt="Nordic Line">
+            </li>
+            <li class="products__item">
+              <div class="products__item-container">
+                <span class="products__item-first-world">Высокотемпературные
+                </span> сушки
+              </div>
+              <img class="products__item-img" src="images/drying-high-temp.jpg" alt="Высокотемпературные сушки">
+            </li>
+            <li class="products__item">
+              <div class="products__item-container"><span class="products__item-first-world">Туннельные</span>
+                сушки</div>
+              <img class="products__item-img" src="images/drying-tunnel.jpg" alt="Туннельные сушки">
+            </li>
+          </ul>
+        </div>
+
+      </section>
     </main>
     <footer></footer>
   </div>

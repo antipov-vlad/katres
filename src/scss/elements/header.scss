@@ -1,10 +1,18 @@
 header {
-  background-color: rgb(235, 173, 162);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 12px 10px rgba(0, 0, 0, 0.04);
 }
 
 .header__wrapper {
   display: flex;
   align-items: center;
+  gap: 11px;
   min-height: 74px;
   min-width: 100%;
+  box-sizing: border-box;
+  padding: 24px 16px;
+}
+
+.header__logo {
+  margin-right: auto;
 }
