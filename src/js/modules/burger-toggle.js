@@ -1,10 +1,30 @@
+const header = document.querySelector('.header');
 const navigation = document.querySelector('.nav');
-export const buttonBurger = document.querySelector('.nav__hamburger');
+const navigationList = navigation.querySelector('.nav__list');
+const buttonBurger = document.querySelector('.contacts__hamburger');
+const containBurger = buttonBurger.querySelector(
+	'.contacts__hamburger-contain'
+);
+
+// navigationList.classList.remove('visually-hidden')
 
 const toggleBurger = () => {
-    navigation.addEventListener('click', () =>{
-        buttonBurger.classList.toggle('open')
-    })
-}
+	buttonBurger.onclick = () => {
+		containBurger.classList.toggle('open');
+		
+		header.classList.toggle('header__wrapper--open-menu');
 
-export default toggleBurger
+		if (containBurger.classList.contains('open')) {
+			document.body.style.overflow = 'hidden';
+            navigationList.style.visibility = 'visible';
+            navigationList.classList.add('nav__list--visibility')
+            
+		} else {
+			document.body.style.overflow = '';
+            navigationList.style.visibility = 'hidden';
+            navigationList.classList.remove('nav__list--visibility')
+		}
+	};
+};
+
+export default toggleBurger;

@@ -23,25 +23,13 @@
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   max-width: 360px;
   margin: 0 auto;
   padding: 0;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 /**
@@ -817,12 +805,12 @@ button.swiper-pagination-bullet {
   bottom: 75px;
 }
 
-header {
-  background-color: white;
-  box-shadow: 0px 4px 12px 10px rgba(0, 0, 0, 0.04);
+.header {
+  width: 100%;
 }
 
 .header__wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 11px;
@@ -830,9 +818,26 @@ header {
   min-width: 100%;
   box-sizing: border-box;
   padding: 24px 16px;
+  background-color: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: 4;
+}
+.header__wrapper--open-menu {
+  top: 0;
+  left: 0;
+}
+.header__wrapper--open-menu::after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  content: "";
+  bottom: 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: 3;
+  background-color: black;
 }
 
-.header__logo {
+.header__wrapper .header__logo {
   margin-right: auto;
 }
 
@@ -848,7 +853,7 @@ footer {
 .contacts__email {
   height: 39px;
   width: 39px;
-  background-color: #FFDA00;
+  background-color: #ffda00;
   border-radius: 50%;
 }
 
@@ -862,24 +867,23 @@ footer {
   width: 16px;
 }
 
-.nav {
+.contacts__hamburger {
   width: 39px;
   height: 39px;
-  background-color: #FFDA00;
+  background-color: #ffda00;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.nav__hamburger {
+.contacts__hamburger-contain {
   position: relative;
   width: 18px;
   height: 18px;
   transition-duration: 0.5s;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -60%);
 }
-.nav__hamburger .nav__hamburger-E {
+.contacts__hamburger-contain .contacts__hamburger-E {
   transition-duration: 0.5s;
   position: relative;
   display: block;
@@ -890,7 +894,7 @@ footer {
   transition-delay: 0.5s;
   border-radius: 20%;
 }
-.nav__hamburger .nav__hamburger-E:before {
+.contacts__hamburger-contain .contacts__hamburger-E:before {
   transition-duration: 0.5s;
   position: absolute;
   width: 18px;
@@ -900,7 +904,7 @@ footer {
   top: -5px;
   border-radius: 20%;
 }
-.nav__hamburger .nav__hamburger-E:after {
+.contacts__hamburger-contain .contacts__hamburger-E:after {
   transition-duration: 0.5s;
   position: relative;
   display: block;
@@ -911,7 +915,7 @@ footer {
   top: 5px;
   border-radius: 20%;
 }
-.nav__hamburger .nav__hamburger-X {
+.contacts__hamburger-contain .contacts__hamburger-X {
   transition-duration: 0.5s;
   position: relative;
   display: block;
@@ -922,7 +926,7 @@ footer {
   transform: scaleX(0);
   transform-origin: 10px 0px;
 }
-.nav__hamburger .nav__hamburger-X:before {
+.contacts__hamburger-contain .contacts__hamburger-X:before {
   transition-duration: 0.5s;
   position: absolute;
   width: 18px;
@@ -932,7 +936,7 @@ footer {
   top: -50%;
   transform: rotateZ(45deg) scaleX(1.25) translate(-1.5px, -1.5px);
 }
-.nav__hamburger .nav__hamburger-X:after {
+.contacts__hamburger-contain .contacts__hamburger-X:after {
   transition-duration: 0.5s;
   position: relative;
   display: block;
@@ -943,26 +947,67 @@ footer {
   top: 50%;
   transform: rotateZ(-45deg) scaleX(1.25) translate(1.5px, -1.5px);
 }
-.nav__hamburger .nav__hamburger-X:hover {
+.contacts__hamburger-contain .contacts__hamburger-X:hover {
   cursor: pointer;
 }
-.nav__hamburger.open .nav__hamburger-E {
+.contacts__hamburger-contain.open .contacts__hamburger-E {
   transition-duration: 0.5s;
   transform: scaleX(0);
   transition-delay: 0s;
 }
-.nav__hamburger.open .nav__hamburger-X {
+.contacts__hamburger-contain.open .contacts__hamburger-X {
   transition: 0.5s;
   transition-delay: 0.5s;
   transform: scaleX(1);
 }
-.nav__hamburger:hover {
+.contacts__hamburger-contain:hover {
   cursor: pointer;
 }
 
-.nav__menu-list {
+.nav__list {
+  position: absolute;
   list-style: none;
-  z-index: 1;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  left: 0;
+  height: 0;
+  z-index: 3;
+  overflow-y: scroll;
+  transition: 0.5s;
+  opacity: 1;
+  visibility: hidden;
+}
+.nav__list--visibility {
+  height: 100vh;
+  transition: 1.5s;
+}
+
+.nav__item {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 15px 15px;
+  margin-left: 15px;
+  border-bottom: 1px solid #DEDEDE;
+}
+.nav__item:nth-child(2) {
+  font-weight: 500;
+}
+
+.nav__item-title {
+  font-weight: 500;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  cursor: pointer;
+}
+.nav__item-title::after {
+  display: block;
+  content: "";
+  background-image: url("../images/sprite.svg#arrow");
+  width: 10px;
+  height: 10px;
 }
 
 .products__wrapper {
@@ -986,7 +1031,7 @@ footer {
   font-weight: 700;
   font-size: 18px;
   color: #ffffff;
-  background-color: #100F0F;
+  background-color: #100f0f;
   border-radius: 5px;
   width: 100%;
 }
@@ -1012,7 +1057,7 @@ footer {
 }
 
 .products__item-first-world {
-  color: #FBDA1B;
+  color: #fbda1b;
 }
 
 .products__title::before {
@@ -1027,4 +1072,17 @@ footer {
   width: 31px;
   height: 31px;
   border-radius: 50%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
